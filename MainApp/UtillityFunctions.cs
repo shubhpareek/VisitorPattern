@@ -18,7 +18,8 @@ namespace MainApp
             Console.WriteLine( " Type 1 to add shape " );
             Console.WriteLine( " Type 2 to calculate perimeter of all shapes " );
             Console.WriteLine( " Type 3 to calculate area of all shapes " );
-            Console.WriteLine( " Type 4 to exit  " );
+            Console.WriteLine( " Type 4 to remove a shape  " );
+            Console.WriteLine( " Type 5 to exit  " );
         }
 
         public static void AddShapeMenu() 
@@ -60,6 +61,16 @@ namespace MainApp
             string name   = Console.ReadLine();
             Triangle obj = new Triangle( side1 ,side2 ,side3 , name , "Triangle" );
             return obj;
+        }
+
+        public static void RemoveShape(ShapeList shapes)
+        {
+            Console.WriteLine( "type the name of shape to be removed :" );
+            string name = Console.ReadLine() ;
+            Console.WriteLine( "What is the type of shape " );
+            string type = Console.ReadLine() ;
+            shapes.Remove(name,type);
+
         }
     }
 }

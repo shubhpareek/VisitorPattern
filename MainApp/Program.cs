@@ -61,6 +61,9 @@ while (true)
             shapes.Accept( areaVisitor );
             break;
         case 4:
+            UtillityFunctions.RemoveShape( shapes );
+            break;
+        case 5:
             Console.WriteLine( " Thanks for using the app ." );
             return;
             
