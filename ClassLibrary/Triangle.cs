@@ -11,7 +11,7 @@ namespace ClassLibrary
         public double side1;
         public double side2;
         public double side3;
-        public Triangle( double s1 , double s2 , double s3 ,string value) : base(value)
+        public Triangle( double s1 , double s2 , double s3 ,string value,string typeName) : base(value,typeName)
         {
             side1 = s1;
             side2 = s2;

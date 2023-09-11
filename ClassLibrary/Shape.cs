@@ -8,11 +8,13 @@ namespace ClassLibrary
 {
     public abstract class Shape
     {
-        public string name { get { return name; } set { name = value; } }
+        public string name { get; set; }
+        public string type;
         public abstract void Accept( Visitor visitor );
-        public Shape(string value)
+        public Shape(string value,string typeName)
         {
             name = value;
+            type = typeName;
         }
 
     }

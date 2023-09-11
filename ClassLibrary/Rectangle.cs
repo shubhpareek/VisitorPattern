@@ -11,7 +11,7 @@ namespace ClassLibrary
         public double length;
         public double breadth;
 
-        public Rectangle(double l, double b,string value):base(value)
+        public Rectangle(double l, double b,string value,string typeName):base(value,typeName)
         {
             breadth = b;
             length  =  l;
