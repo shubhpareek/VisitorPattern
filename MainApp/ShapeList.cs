@@ -9,7 +9,7 @@ namespace MainApp
 {
     public class ShapeList
     {
-        private List<Shape> _shapes = new List<Shape>();
+        private readonly List<Shape> _shapes = new List<Shape>();
         public void Attach( Shape shape )
         {
             _shapes.Add( shape );
@@ -18,10 +18,10 @@ namespace MainApp
         {
             foreach (Shape shape in _shapes)
             {
-                if(shape.type == typeName && shape.name == name) 
+                if(shape.Type == typeName && shape.Name == name) 
                 { 
                     _shapes.Remove( shape );
-                }
+                }   
 
             }
             Console.WriteLine("Shape with name {0} and type {1} has been removed ",name,typeName);

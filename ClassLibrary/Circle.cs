@@ -8,9 +8,9 @@ namespace ClassLibrary
 {
     public class Circle : Shape
     {
-        public double radius;
+        public double Radius;
         public Circle(double radius,string value,string typeName):base(value,typeName)
-        { this.radius = radius; }   
+        { Radius = radius; }   
         public override void Accept( Visitor visitor )
         {
             visitor.VisitCircle( this );

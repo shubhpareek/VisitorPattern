@@ -8,13 +8,13 @@ namespace ClassLibrary
 {
     public class Rectangle : Shape
     {
-        public double length;
-        public double breadth;
+        public double Length;
+        public double Breadth;
 
         public Rectangle(double l, double b,string value,string typeName):base(value,typeName)
         {
-            breadth = b;
-            length  =  l;
+            Breadth = b;
+            Length  =  l;
         }
         public override void Accept( Visitor visitor )
         {

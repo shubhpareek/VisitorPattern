@@ -11,15 +11,15 @@ namespace ClassLibrary
         
         public override void VisitCircle(Circle obj)
         {
-            Console.WriteLine( "Perimeter of Circle {0} is {1}" , obj.name , 2 * Math.PI * obj.radius );
+            Console.WriteLine( "Perimeter of Circle {0} is {1}" , obj.Name , 2 * Math.PI * obj.Radius );
         }
         public override void VisitRectangle(Rectangle obj)
         {
-            Console.WriteLine( "Perimeter of Rectangle {0} is {1} " , obj.name , 2*(obj.length + obj.breadth ));
+            Console.WriteLine( "Perimeter of Rectangle {0} is {1} " , obj.Name , 2*(obj.Length + obj.Breadth ));
         }
         public override void VisitTriangle(Triangle obj ) 
         {
-            Console.WriteLine( "Perimeter of Triangle {0} is {1}" , obj.name , (obj.side1 + obj.side2 + obj.side3));
+            Console.WriteLine( "Perimeter of Triangle {0} is {1}" , obj.Name , (obj.Side1 + obj.Side2 + obj.Side3));
         } 
     }
 }
