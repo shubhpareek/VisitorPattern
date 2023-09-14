@@ -9,10 +9,12 @@ namespace MainApp
 {
     public static class UtillityFunctions
     {
+        //introduction of the app 
         public static void Intro()
         {
             Console.WriteLine( "Hello , you can add/remove shapes and calculate area , perimeter for all the objects " );
         }
+        //list of actions that can be done 
         public static void ActionMenu()
         {
             Console.WriteLine( " Type 1 to add shape " );
@@ -22,6 +24,7 @@ namespace MainApp
             Console.WriteLine( " Type 5 to exit  " );
         }
 
+        // list of shapes 
         public static void AddShapeMenu() 
         { 
             Console.WriteLine( " Type 1 to add Circle " );
@@ -29,6 +32,7 @@ namespace MainApp
             Console.WriteLine( " Type 3 to add Rectangle " );
         }
 
+        // to add a circle 
         public static Circle AddCircle()
         {
             Console.WriteLine( " Enter Radius :" );
@@ -38,6 +42,7 @@ namespace MainApp
             Circle obj = new Circle( radius , name , "Circle" );
             return obj;
         }
+        // to add a rectangle 
         public static Rectangle AddRectangle()
         {
             Console.WriteLine( " Enter length :" );
@@ -49,6 +54,7 @@ namespace MainApp
             Rectangle obj = new Rectangle( length, breadth , name , "Rectangle" );
             return obj;
         }
+        // to add a triangle 
         public static Triangle AddTriangle()
         {
             Console.WriteLine( " Enter first side :" );
@@ -63,6 +69,7 @@ namespace MainApp
             return obj;
         }
 
+        // to remove a shape from list 
         public static void RemoveShape(ShapeList shapes)
         {
             Console.WriteLine( "type the name of shape to be removed :" );

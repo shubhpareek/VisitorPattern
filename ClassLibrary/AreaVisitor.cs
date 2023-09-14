@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
+    //<summary>
+    //visitor for calculating area of shape objects 
+    //</summary>
     public class AreaVisitor: Visitor
     {
+        //for circle
         public override void VisitCircle(Circle obj)
         {
             Console.WriteLine( "Area of Circle {0} is {1}" , obj.Name , Math.PI * obj.Radius * obj.Radius );
         }
+        //for rectangle
         public override void VisitRectangle(Rectangle obj)
         {
             Console.WriteLine( "Area of Rectangle {0} is {1} " , obj.Name , obj.Length * obj.Breadth );
         }
+        //for triangle
         public override void VisitTriangle(Triangle obj ) 
         {
             // Calculate the semi-perimeter of the triangle

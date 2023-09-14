@@ -1,5 +1,6 @@
 ﻿namespace ClassLibrary
 {
+    // base visitor class 
     public abstract class Visitor
     {
         public abstract void VisitCircle(Circle obj);
