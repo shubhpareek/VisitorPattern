@@ -11,7 +11,7 @@ namespace UnitTests
         readonly AreaVisitor _areaVisitor = new AreaVisitor();
         readonly PerimeterVisitor _perimeterVisitor = new PerimeterVisitor();    
 
-        // <summary> for testing area visitor </summary>
+        /// <summary> for testing area visitor </summary>
         [TestMethod]
         public void TestMethod1()
         {
@@ -40,7 +40,7 @@ namespace UnitTests
 
         }
         
-        // <summary> for testing perimeter visitor </summary>
+        /// <summary> for testing perimeter visitor </summary>
         [TestMethod]
         public void TestMethod2()
         {
@@ -69,5 +69,48 @@ namespace UnitTests
             Assert.AreEqual( compare, result );
 
         }
+        /// <summary>
+        /// Test method to verify that the type of a Circle object matches the expected type.
+        /// </summary>
+        [TestMethod]
+        public void TestCircleType()
+        {
+            Circle circle = new Circle( 12.1 , "football" , "Circle" );
+
+            string expectedType = "Circle"; // This should match the type you set during object initialization
+            string actualType = circle.Type;
+
+            Assert.AreEqual( expectedType , actualType );
+        }
+
+        /// <summary>
+        /// Test method to verify that the type of a Rectangle object matches the expected type.
+        /// </summary>
+        [TestMethod]
+        public void TestRectangleType()
+        {
+            Rectangle rectangle = new Rectangle( 2.0 , 5.0 , "normal" , "Rectangle" );
+
+            string expectedType = "Rectangle"; // This should match the type you set during object initialization
+            string actualType = rectangle.Type;
+
+            Assert.AreEqual( expectedType , actualType );
+        }
+
+        /// <summary>
+        /// Test method to verify that the type of a Triangle object matches the expected type.
+        /// </summary>
+        [TestMethod]
+        public void TestTriangleType()
+        {
+            Triangle triangle = new Triangle( 3.0 , 4.0 , 5.0 , "right" , "Triangle" );
+
+            string expectedType = "Triangle";
+            string actualType = triangle.Type;
+
+            Assert.AreEqual( expectedType , actualType );
+        }
+
+
     }
 }
