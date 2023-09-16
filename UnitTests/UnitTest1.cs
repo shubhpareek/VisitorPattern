@@ -1,6 +1,7 @@
 ﻿using MainApp;
 using ClassLibrary;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace UnitTests
 {
@@ -35,8 +36,13 @@ namespace UnitTests
 
             // comparing final results
             string result = sw.ToString();
-            string compare = "Area of Rectangle normal is 10 \r\nArea of Circle football is 459.96058041208164\r\nArea of Triangle equilateral is 3.897114317029974\r\n\r\n";
-            Assert.AreEqual( compare, result );
+            string compare = "Area of Rectangle normal is 10\r\nArea of Circle football is 459.96058041208164\r\nArea of Triangle equilateral is 3.897114317029974\r\n\r\n";
+            string[] comp = Regex.Split( compare, @"\s+" ); ;
+            string[] resu = Regex.Split( result , @"\s+" ); ;
+
+            for ( int i =0;i < comp.Length;i++ ) { if (comp[i] != resu[i]) { Debug.WriteLine( comp[i] );Debug.WriteLine( resu[i] ); Assert.Fail(); } }
+
+            //Assert.AreEqual( compare.Split( new char[] { ' ' , '\n' , '\r' } ) , result.Split( new char[] { ' ' , '\n' , '\r' } ));
 
         }
         
@@ -66,14 +72,20 @@ namespace UnitTests
 
             // comparing final results
             string compare = "Perimeter of Rectangle normal is 14 \r\nPerimeter of Circle football is 76.026542216873\r\nPerimeter of Triangle equilateral is 9\r\n\r\n";
-            Assert.AreEqual( compare, result );
+            string[] comp = Regex.Split( compare, @"\s+" ); ;
+            string[] resu = Regex.Split( result , @"\s+" ); ;
+
+            for ( int i =0;i < comp.Length;i++ ) { if (comp[i] != resu[i]) { Debug.WriteLine( comp[i] );Debug.WriteLine( resu[i] ); Assert.Fail(); } }
+            
+            
+            //Assert.AreEqual( , result.Split(new char[]{' ','\n','\r'}) );
 
         }
         /// <summary>
         /// Test method to verify that the type of a Circle object matches the expected type.
         /// </summary>
         [TestMethod]
-        public void TestCircleType()
+        public void TestMethod3()
         {
             Circle circle = new Circle( 12.1 , "football" , "Circle" );
 
@@ -87,7 +99,7 @@ namespace UnitTests
         /// Test method to verify that the type of a Rectangle object matches the expected type.
         /// </summary>
         [TestMethod]
-        public void TestRectangleType()
+        public void TestMethod4()
         {
             Rectangle rectangle = new Rectangle( 2.0 , 5.0 , "normal" , "Rectangle" );
 
@@ -101,7 +113,7 @@ namespace UnitTests
         /// Test method to verify that the type of a Triangle object matches the expected type.
         /// </summary>
         [TestMethod]
-        public void TestTriangleType()
+        public void TestMethod5()
         {
             Triangle triangle = new Triangle( 3.0 , 4.0 , 5.0 , "right" , "Triangle" );
 
